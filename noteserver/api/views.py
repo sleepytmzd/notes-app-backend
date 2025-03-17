@@ -30,3 +30,10 @@ def deleteNote(request, note_id):
     note = Note.objects.get(id=note_id)
     note.delete()
     return Response("Note deleted successfully")
+
+from django.http import JsonResponse
+
+@api_view(['GET'])
+def health_check(request):
+    return JsonResponse({"status": "ok"})
+
