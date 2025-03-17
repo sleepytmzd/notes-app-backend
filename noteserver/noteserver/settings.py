@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'noteserver.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your connection string URI in supabase.
-        default= "postgresql://postgres.nyauanknhfvysvvxnkxx:django-supabase@aws-0-us-east-1.pooler.supabase.com:6543/postgres",
+        default= os.getenv('DB_URL'),
         conn_max_age=600
     )
 }
